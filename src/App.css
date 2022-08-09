@@ -1,27 +1,93 @@
 .App {
+  color: white;
   text-align: center;
+  height: 100vh;
+  width: 100%;
+  /* background: url(https://www.ppt-backgrounds.net/thumbs/light-black-ppt.jpeg); */
+  /* background: url(eleox-code-challenge/eleox-code-challenge/public/eleox-login-background.svg); */
+  background-image: url('../public/login-background.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* .iconImage {
+  height: 30px;
+  width: 30px;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.App-logo {}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loginBox {
+  background-color: #363a45;
+  padding: 20px;
+  border: 2px solid #6980c4;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: flex-start;
+}
+
+input[type="textbox" i] {
+  background-color: transparent;
+  border: 2px solid #6980c4;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+input[type="password" i] {
+  background-color: transparent;
+  border: 2px solid #6980c4;
+  border-radius: 3px;
+  margin-bottom: 25px;
+
+}
+
+
+/* .loginBox form input.submit {
+  background-color: #1CD5A6;
+  border: none;
+  border-radius: 10px;
+} */
+
+.loginBox form input[type="submit"] {
+  background-color: #1CD5A6;
+  border: none;
+  width: 60%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+
+}
+
+.loginBox form a {
+  color: grey;
+  font-size: xx-small;
+}
+
+.extras {
+  width: 60%;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+@media (prefers-reduced-motion: no-preference) {}
+
+.App-header {
+  /* display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url('https://www.ppt-backgrounds.net/thumbs/light-black-ppt.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
 }
 
 .App-link {
@@ -32,6 +98,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
