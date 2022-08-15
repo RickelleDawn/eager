@@ -3,7 +3,6 @@
   text-align: center;
   height: 100vh;
   width: 100%;
-  /* background: url(https://www.ppt-backgrounds.net/thumbs/light-black-ppt.jpeg); */
   /* background: url(eleox-code-challenge/eleox-code-challenge/public/eleox-login-background.svg); */
   background-image: url('../public/login-background.svg');
   background-repeat: no-repeat;
@@ -56,6 +55,7 @@ input[type="password" i] {
 
 .loginBox form input[type="submit"] {
   background-color: #1CD5A6;
+  color: white;
   border: none;
   width: 60%;
   padding-left: 40px;

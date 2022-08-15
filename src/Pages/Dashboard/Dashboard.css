@@ -1,0 +1,145 @@
+.Dashboard-header {
+
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: #19191B;
+    background-image: url('./eleox-dashboard-background.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 1% 0% 2% 1%;
+    margin-left: 0px;
+    z-index: 1;
+}
+
+.person-div {
+    background-color: #363a45;
+    border: 2px solid #6980c4;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-items: center;
+    margin: 25px 0px 48px 25px;
+    width: 59%;
+    height: 100%;
+}
+
+.person-email {
+    color: #CBC8C8;
+    margin-top: 10px;
+    margin-bottom: 45px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+.person-avatar {
+    padding: 8px 30px 10px 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.person-avatar img {
+
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    align-self: center;
+
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.person-info h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-family: Verdana;
+    margin-bottom: 0px;
+    margin-top: 23px;
+}
+
+.person-info hr {
+    border: 1px solid #6980c4;
+    width: 80%;
+    margin-left: 0px;
+    margin-top: 0px;
+    justify-self: left;
+
+}
+
+.person-job {
+    margin-top: 2px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 9px;
+    letter-spacing: -0.5px;
+    font-family: Arial;
+}
+
+.extras {
+    width: 37%;
+    padding: 67px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.control-elements {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+}
+
+
+#logout-icon {
+    height: 75px;
+    width: 75px;
+    position: fixed;
+    right: 35px;
+    top: 28px;
+    cursor: pointer;
+}
+
+#add-new {
+
+    background-color: #1CD5A6;
+    border: 3px solid #FFFF;
+    border-radius: 20px;
+    width: 315px;
+    height: 78px;
+    font-size: xx-large;
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    position: fixed;
+    top: 41.7vh;
+    right: 70px;
+    letter-spacing: 7px;
+    padding-bottom: 5px;
+    padding-left: 37px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#add-new-icon {
+    position: fixed;
+    top: 43.5vh;
+    right: 100px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.display-comments {
+    height: 100px;
+}
