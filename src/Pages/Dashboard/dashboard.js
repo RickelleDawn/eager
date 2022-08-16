@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Dashboard.css';
 import logoutIcon from './logout-icon.svg'
-// import deleteIcon from './delete-icon.svg'
+import deleteIcon from './delete-icon.svg'
 // import detailsIcon from './more-details-icon.svg'
 import addIcon from './add-icon.svg'
 import avatarIcon from './avatar-icon.svg'
@@ -36,29 +36,64 @@ function Dashboard() {
 
         try {
             const result = await authAxios.get(`${apiUrl}/people`);
+            // api GET request using axios to fetch array of people
+
             setPeopleList(result.data.people)
+            // updates people list to returned data 
 
         } catch (err) {
             console.log("FAILED ATTEMPT " + (err))
         }
     }
 
+    const addNew = () => {
+       // adds randomized person to API using hardcoded payload 
+        const result = authAxios.post(`${apiUrl}/people`, {
+            "first_name": "Walt",
+            "last_name": "Womble",
+            "email": "walt.womble@umbrage.com",
+            "job_title": "Craft: Software Engineering"
+
+        }).then(response => {if (response.request.status === 200) { 
+            // check response status to ensure success 
+            // josh wrote -- .then(response => console.log(response)) --- then I continued
+
+            setPeopleList([...peopleList, response.data.person])
+            // if response status is successful, push returned object to peopleList array to mimic list without having to re-render from API call
+        }}) 
+    }
+
+    useEffect(() => {
+        if (!token){
+         navigate("/login") 
+        }
+    },[])
+    // check for token, if token exists display data, if not reroute to login screen
+
+
     useEffect(() => {
         getPeople()
     }, [])
     // useEffect to keep from requesting data repeatedly
 
+    const deletePerson = (delId) => {
+        // called in control-elements for delete icon
+            
+                authAxios.delete(`${apiUrl}/people/${delId}`)
+                // deletes person by passing ID to API using axios delete request
 
+                .then(response => {if (response.request.status === 200) { 
+                    // checks response status to verify success
 
+                    setPeopleList(peopleList.filter(people => people.id !== delId))
+                    // filters through people list to show all except deleted person to mimic list without having to re-render from API call
+                }});
+               
+        }
 
     const displayDashboard = () => {
         // called in "dashboard" div, maps through array of people from api/people and displays data 
-
-        if (token) {
-
-
-            // check for token, if token exists display data
-
+        
             return peopleList.map((person) => {
 
                 const id = person.id
@@ -68,11 +103,13 @@ function Dashboard() {
                 // person.avatar returns broken img link, so I imported my own avatar icon
                 const email = person.email.toLowerCase() // lowercase for styling 
 
+                
+
+                
 
                 return (
                     // returns html to display data 
                     <div key={id} className='person-div'>
-
 
                         <div className='person-avatar'>
                             <img src={avatarIcon} alt={`${name}'s avatar`} />
@@ -85,35 +122,29 @@ function Dashboard() {
                             <p className='person-email'>{email}</p>
                         </div>
 
-                        {/* <div className='extras'>
-                            <img className='control-elements'
+                        <div className='extras'>
+                            {/* <img className='control-elements'
                                 src={detailsIcon}
                                 alt="Click here to view comments"
 
-                            />
+                            /> */}
+                            {/* Non-functional, added in for styling and will continue adding functionailty */}
+
                             <img className='control-elements'
                                 src={deleteIcon}
                                 alt="Click here to delete this person"
+                                onClick={() => deletePerson(id)}
+                                // Deletes person on click using API call
                             />
-                        </div> */}
-
-                        {/* Non-functional, added in for styling and will continue adding functionailty */}
-
-
-
-
-
+                        </div>
                     </div>
                 )
 
-            })
-        } else {
-            // if no token exists reroute to login screen and clear local storage
-
-            logout()
-        }
-
+            })       
     }
+
+   
+
 
 
 
@@ -138,13 +169,13 @@ function Dashboard() {
 
                     />
 
-                    <button id='add-new'>add new</button>
+                    <button id='add-new'
+                    onClick={() => addNew()}>add new</button>
                     <img id='add-new-icon'
                         src={addIcon}
                     />
 
                 </div>
-
 
             </header>
         </div>

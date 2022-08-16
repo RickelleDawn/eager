@@ -25,7 +25,7 @@ function LoginForm() {
 
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
+    evt.preventDefault(); // josh wrote --- evt.preventDefault();
     // prevents form from refreshing page on submit
     axios.post(`${apiUrl}/login`, {
       username: username,
