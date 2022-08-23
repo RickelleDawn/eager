@@ -1,9 +1,8 @@
-.App {
+/* .App {
   color: white;
   text-align: center;
   height: 100vh;
   width: 100%;
-  /* background: url(eleox-code-challenge/eleox-code-challenge/public/eleox-login-background.svg); */
   background-image: url('../public/login-background.svg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12,14 +11,9 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-}
-
-/* .iconImage {
-  height: 30px;
-  width: 30px;
 } */
 
-.App-logo {}
+/* .App-logo {}
 
 .loginBox {
   background-color: #363a45;
@@ -47,11 +41,6 @@ input[type="password" i] {
 }
 
 
-/* .loginBox form input.submit {
-  background-color: #1CD5A6;
-  border: none;
-  border-radius: 10px;
-} */
 
 .loginBox form input[type="submit"] {
   background-color: #1CD5A6;
@@ -67,18 +56,10 @@ input[type="password" i] {
 
 }
 
-.loginBox form a {
-  color: grey;
-  font-size: xx-small;
-}
 
-.extras {
-  width: 60%;
-  display: inline-block;
-  justify-content: space-between;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {}
+/* @media (prefers-reduced-motion: no-preference) {}
 
 .App-header {
   /* display: block;
@@ -87,19 +68,7 @@ input[type="password" i] {
   background-image: url('https://www.ppt-backgrounds.net/thumbs/light-black-ppt.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; */
+  background-position: center; 
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
+ */

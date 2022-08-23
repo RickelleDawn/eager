@@ -13,9 +13,6 @@
     z-index: 1;
 }
 
-/* eleox-code-challenge/eleox-code-challenge/public/login-background.svg
-eleox-code-challenge/eleox-code-challenge/src/Pages/LoginForm/LoginForm.css */
-
 
 .login-box {
     background-color: #363a45;
@@ -31,7 +28,7 @@ eleox-code-challenge/eleox-code-challenge/src/Pages/LoginForm/LoginForm.css */
     height: 386px;
 }
 
-#auto-fill {
+#login-auto-fill {
     height: 45px;
     width: 45px;
     position: absolute;
@@ -40,7 +37,7 @@ eleox-code-challenge/eleox-code-challenge/src/Pages/LoginForm/LoginForm.css */
     cursor: pointer;
 }
 
-input[type="textbox" i] {
+#login-user-input {
     background-color: transparent;
     color: white;
     border: 3.5px solid #4a5678;
@@ -55,14 +52,14 @@ input[type="textbox" i] {
 }
 
 
-input[type="textbox" i]:focus {
+#login-user-input:focus {
     border: 3.5px solid #92f2d7;
     outline: none;
 
 
 }
 
-input[type="password" i] {
+#login-pw-input {
     background-color: transparent;
     color: white;
     border: 3.5px solid #4a5678;
@@ -75,12 +72,12 @@ input[type="password" i] {
 
 }
 
-input[type="password" i]:focus {
+#login-pw-input:focus {
     border: 3.5px solid #92f2d7;
     outline: none;
 }
 
-.login-box form input[type="submit"] {
+#submit-button {
     background-color: #1CD5A6;
     color: white;
     font-size: medium;
@@ -104,3 +101,4 @@ input[type="password" i]:focus {
     display: flex;
     justify-content: space-evenly;
 }
+

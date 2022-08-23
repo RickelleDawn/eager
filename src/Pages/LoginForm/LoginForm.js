@@ -24,6 +24,11 @@ function LoginForm() {
 
 
 
+
+
+//-------------------------------------------- LOGIN FUNCTIONALITY ------------------------------------------------
+
+
   const handleSubmit = (evt) => {
     evt.preventDefault(); // josh wrote --- evt.preventDefault();
     // prevents form from refreshing page on submit
@@ -47,7 +52,13 @@ function LoginForm() {
       return navigate("/dashboard")
     }
   }, [loggedIn])
-  // check login success and keep page from requesting data repeatedly
+  // checks login success and keeps page from requesting data repeatedly, if login is successful reroute to dashboard
+
+
+
+
+
+//-------------------------------------------- LOGIN DISPLAY ------------------------------------------------
 
 
 
@@ -57,7 +68,7 @@ function LoginForm() {
       <div className='login-box'>
 
         <img src={eleoxLogo} alt="Eleox Logo" />
-        <img id='auto-fill'
+        <img id='login-auto-fill'
           src={autoFill}
           alt="Auto"
           onClick={() => {
@@ -72,6 +83,7 @@ function LoginForm() {
         <form onSubmit={handleSubmit}>
           <input
             required
+            id='login-user-input'
             type="textbox"
             placeholder="username"
             autoComplete='off'
@@ -87,6 +99,7 @@ function LoginForm() {
 
           <input
             required
+            id='login-pw-input'
             type="password"
             placeholder="password"
             autoComplete='off'
@@ -106,10 +119,12 @@ function LoginForm() {
 
           <br></br>
 
-          {/* <span className='acct-help'>
+          <span className='acct-help'>
             <a href="" > Register an account</a>
             <a href="" > Forgot password?</a>
-          </span> */}
+          </span>
+
+          {/* Non-funtional, left for styling */}
 
         </form>
 
